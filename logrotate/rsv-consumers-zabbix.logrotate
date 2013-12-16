@@ -1,0 +1,17 @@
+/var/log/rsv/consumers/zabbix-consumer.log {
+  daily
+  rotate 1
+  compress
+  compressoptions -9f
+  copytruncate
+  missingok
+}
+/var/log/rsv/consumers/zabbix-consumer.output {
+  monthly
+  size=1M
+  rotate 7
+  compress
+  compressoptions -9f
+  copytruncate
+  missingok
+}

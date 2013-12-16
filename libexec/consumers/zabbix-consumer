@@ -1,0 +1,154 @@
+#!/usr/bin/env python
+
+""" This script processes RSV records and interfaces with Zabbix """
+
+import os
+import sys
+import ConfigParser
+
+# Used by zabbix_sender and send_zabbix_trapper
+import socket
+import struct
+import json
+
+from optparse import OptionParser
+
+import RSVConsumer
+
+zabbixCode = {}
+zabbixCode["OK"]       = "0"
+zabbixCode["WARNING"]  = "1"
+zabbixCode["CRITICAL"] = "2"
+zabbixCode["UNKNOWN"]  = "3"
+
+
+class ZabbixConsumer(RSVConsumer.RSVConsumer):
+
+    name = "zabbix"
+
+    def parse_arguments(self):
+
+        usage = """usage: zabbix-consumer
+          --conf-file <path to configuration file>
+          --zabbix-sender
+          --help | -h 
+          --version
+        """
+
+        version = "zabbix-consumer 5.0"
+        description = "This script processes RSV records and sends them to Zabbix."
+
+        parser = OptionParser(usage=usage, description=description, version=version)
+        parser.add_option("--conf-file", dest="conf_file", default=None,
+                          help="Zabbix configuration file.")
+        parser.add_option("--zabbix-sender", dest="zabbix_sender", action="store_true", default=False,
+                          help="Use zabbix_sender.  Default=%default")
+
+        (self.__options, self.__args) = parser.parse_args()
+        return
+
+
+    def load_config_file(self):
+        """ """
+        if not os.path.exists(self.__options.conf_file):
+            self.die("ERROR: The supplied configuration file '%s' does not exist." % self.__options.conf_file)
+
+        self.config = ConfigParser.ConfigParser()
+        self.config.read(self.__options.conf_file)
+        return
+        
+
+    def process_record(self, raw_record):
+        """ Process a record in WLCG format """
+        record = self.parse_record(raw_record)
+
+        metric = record["metricName"]
+        PLUGIN_STATE = zabbixCode[record["metricStatus"]]
+        # for PLUGIN_HOST, use RSV_HOST from rsv-zabbix.conf instead of the
+        # serviceURI/hostName from the current record (see SOFTWARE-1170)
+        PLUGIN_HOST = self.config.get("RSV", "RSV_HOST")
+
+        if self.__options.zabbix_sender:
+            self.zabbix_sender(metric, PLUGIN_HOST, PLUGIN_STATE)
+        else:
+            self.send_zabbix_trapper(metric, PLUGIN_HOST, PLUGIN_STATE)
+
+        return
+
+
+    def zabbix_sender(self, SERVICE, HOST, PLUGIN_STATE): 
+        """ This code is from executes zabbix_sender """
+        ZABBIX_SERVER = self.config.get("RSV", "ZABBIX_SERVER")
+        ZABBIX_TRAPPER_PORT = self.config.get("RSV", "ZABBIX_TRAPPER_PORT")
+        ZABBIX_ITEM_KEY = self.config.get("RSV", "ZABBIX_ITEM_KEY")
+
+        KEY = "%s[%s]" % (ZABBIX_ITEM_KEY, SERVICE)
+
+        sender_cmd="/usr/bin/zabbix_sender -z " + ZABBIX_SERVER + " -p " + ZABBIX_TRAPPER_PORT + " -s " + HOST + " -k " + KEY + " -o " + PLUGIN_STATE
+        print sender_cmd
+        sender_id=os.popen(sender_cmd, "r")
+
+        while 1:
+          line = sender_id.readline()
+          if not line: break
+          print line
+
+        return
+
+
+    def send_zabbix_trapper(self, SERVICE, HOST, PLUGIN_STATE):
+        """ This code is from rsv2zabbix.py """
+        ZABBIX_SERVER = self.config.get("RSV", "ZABBIX_SERVER")
+        ZABBIX_TRAPPER_PORT = self.config.get("RSV", "ZABBIX_TRAPPER_PORT")
+        ZABBIX_ITEM_KEY = self.config.get("RSV", "ZABBIX_ITEM_KEY")
+
+        HEADER = 'ZBXD\1'
+        SENDER_DATA = {
+          "request":"sender data",
+          "data":[
+            {
+              "host":"%s" % HOST,
+              "key":"%s[%s]" % (ZABBIX_ITEM_KEY, SERVICE),
+              "value":"%s" % PLUGIN_STATE,
+            }
+          ]
+        }
+
+        data_string = json.dumps(SENDER_DATA)
+        print data_string
+        data_length = len(data_string)
+        data_header = HEADER.encode("ascii") + struct.pack('i', data_length) + '\0\0\0\0'
+
+        DATA = data_header + data_string
+
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.connect((ZABBIX_SERVER, int(ZABBIX_TRAPPER_PORT)))
+
+        # Send data to Zabbix server
+        sock.send(DATA)
+
+        # Read response, first five bytes
+        response_header = sock.recv(5)
+        if not response_header == 'ZBXD\1':
+          raise ValueError('Got invalid response')
+
+        # read the data header to get the length of the response
+        response_data_header = sock.recv(8)
+        response_data_header = response_data_header[:4] # we are only interested in the first four bytes
+        response_len = struct.unpack('i', response_data_header)[0]
+
+        # read the whole rest of the response now that we know the length
+        response_raw = sock.recv(response_len)
+
+        sock.close()
+
+        response = json.loads(response_raw)
+
+        print response
+
+
+
+consumer = ZabbixConsumer()
+consumer.load_config_file()
+consumer.process_files()
+sys.exit(0)
