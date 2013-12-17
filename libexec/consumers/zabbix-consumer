@@ -9,7 +9,11 @@ import ConfigParser
 # Used by zabbix_sender and send_zabbix_trapper
 import socket
 import struct
-import json
+# Load simplejson in cases where json is not available
+try:
+  import simplejson as json
+except ImportError:
+  import json
 
 from optparse import OptionParser
 
