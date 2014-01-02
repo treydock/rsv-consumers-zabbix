@@ -2,6 +2,20 @@
 
 THe RSV zabbix-consumer sends RSV metric results to Zabbix.
 
+## Install
+
+To install from source:
+
+    make install
+
+To build SRPMs:
+
+    ./build.sh
+
+To build RPMs using mock:
+
+    ./build.sh --mock
+
 ## Usage
 
 1. Install the rsv-consumers-zabbix RPM.
