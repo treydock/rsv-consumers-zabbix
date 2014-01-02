@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>2.0</version>
+    <date>2014-01-02T19:30:59Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template - OSG - RSV</template>
+            <name>Template - OSG - RSV</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>RSV GridFTP</name>
+                </application>
+                <application>
+                    <name>RSV OSG-CE</name>
+                </application>
+                <application>
+                    <name>RSV OSG-Local-Monitor</name>
+                </application>
+                <application>
+                    <name>RSV OSG-SRM</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.gratia.pbs]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.gratia.metric]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.globus.gridftp-simple]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV GridFTP</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.local.hostcert-expiry]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-Local-Monitor</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.local.httpcert-expiry]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-Local-Monitor</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.srm.srmping]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-SRM</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.srm.srmcp-readwrite]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-SRM</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.globus.gram-authentication]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.general.vo-supported]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.certificates.crl-expiry]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.certificates.cacert-expiry]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.general.java-version]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.general.osg-directories-CE-permissions]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.general.ping-host]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.general.osg-version]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>RSV Metric $1 status</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>org.osg.rsv.status[org.osg.batch.jobmanagers-available]</key>
+                    <delay>0</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>RSV OSG-CE</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>OSG-RSV Statuses</name>
+                    </valuemap>
+                </item>
+            </items>
+            <discovery_rules/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.batch.jobmanagers-available].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.batch.jobmanagers-available no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.batch.jobmanagers-available].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.batch.jobmanagers-available returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.certificates.cacert-expiry].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.certificates.cacert-expiry no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.certificates.cacert-expiry].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.certificates.cacert-expiry returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>3</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.certificates.crl-expiry].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.certificates.crl-expiry no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.certificates.crl-expiry].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.certificates.crl-expiry returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.java-version].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.general.java-version no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.java-version].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.general.java-version returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.osg-directories-CE-permissions].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.general.osg-directories-CE-permissions no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.osg-directories-CE-permissions].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.general.osg-directories-CE-permissions returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>3</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.osg-version].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.general.osg-version no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.osg-version].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.general.osg-version returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>3</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.ping-host].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.general.ping-host no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.ping-host].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.general.ping-host returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>3</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.vo-supported].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.general.vo-supported no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.general.vo-supported].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.general.vo-supported returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.globus.gram-authentication].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.globus.gram-authentication no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.globus.gram-authentication].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.globus.gram-authentication returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>3</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.globus.gridftp-simple].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.globus.gridftp-simple no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.globus.gridftp-simple].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.globus.gridftp-simple returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>3</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.gratia.metric].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.gratia.metric no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.gratia.metric].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.gratia.metric returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.gratia.pbs].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.gratia.pbs no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.gratia.pbs].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.gratia.pbs returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.local.hostcert-expiry].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.local.hostcert-expiry no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.local.hostcert-expiry].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.local.hostcert-expiry returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.local.httpcert-expiry].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.local.httpcert-expiry no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.local.httpcert-expiry].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.local.httpcert-expiry returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.srm.srmcp-readwrite].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.srm.srmcp-readwrite no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.srm.srmcp-readwrite].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.srm.srmcp-readwrite returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>3</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.srm.srmping].nodata(7200)}=1</expression>
+            <name>OSG-RSV metric org.osg.srm.srmping no recent data</name>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>No data received in the last 2 hours.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template - OSG - RSV:org.osg.rsv.status[org.osg.srm.srmping].last(0)}#0</expression>
+            <name>OSG-RSV metric org.osg.srm.srmping returned {ITEM.LASTVALUE}</name>
+            <url/>
+            <status>1</status>
+            <priority>3</priority>
+            <description>Value mappings:&#13;
+&#13;
+1 - WARNING&#13;
+2 - CRITICAL&#13;
+3 - UNKNOWN</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+    </triggers>
+</zabbix_export>

@@ -39,7 +39,7 @@ class ZabbixConsumer(RSVConsumer.RSVConsumer):
           --version
         """
 
-        version = "zabbix-consumer 5.0"
+        version = "zabbix-consumer 0.0.1"
         description = "This script processes RSV records and sends them to Zabbix."
 
         parser = OptionParser(usage=usage, description=description, version=version)

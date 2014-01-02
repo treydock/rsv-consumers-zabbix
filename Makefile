@@ -5,7 +5,6 @@ libexecdir := $(prefix)/libexec
 datadir := $(prefix)/share
 
 
-
 _default:
 	@echo "No default. Try 'make install'"
 
@@ -25,6 +24,4 @@ install:
 	install -d $(DESTDIR)/$(sysconfdir)/logrotate.d
 	install -m 0644 logrotate/rsv-consumers-zabbix.logrotate $(DESTDIR)/$(sysconfdir)/logrotate.d/rsv-consumers-zabbix
 
-
 .PHONY: _default install
-

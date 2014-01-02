@@ -1,5 +1,5 @@
 Name:      rsv-consumers-zabbix
-Version:   3.7.10
+Version:   0.0.1
 Release:   1%{?dist}
 Summary:   RSV Consumer for Zabbix
 
@@ -24,28 +24,19 @@ Requires: python-simplejson
 %description
 %{summary}
 
-
-%pre
-# Create the rsv user/group
-getent group rsv >/dev/null || groupadd -r rsv
-getent passwd rsv >/dev/null || useradd -r -g rsv -d /var/rsv -s /bin/sh -c "RSV monitoring" rsv
-
-
 %prep
 %setup -q
-
 
 %install
 rm -fr $RPM_BUILD_ROOT
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-
 %files
+%doc AUTHORS LICENSE README.md zabbix_template.xml
 %defattr(-,root,root,-)
 %{_libexecdir}/rsv/consumers/zabbix-consumer
 %config %{_sysconfdir}/rsv/meta/consumers/zabbix-consumer.meta
@@ -55,5 +46,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(-,rsv,rsv) %{_localstatedir}/log/rsv/consumers
 
 %changelog
-* Mon Dec 16 2013  <treydock@tamu.edu> - 3.7.10-1
+* Mon Dec 16 2013  <treydock@tamu.edu> - 0.0.1-1
 - Creating a first RPM for rsv-consumers-zabbix
