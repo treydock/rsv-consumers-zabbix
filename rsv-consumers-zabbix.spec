@@ -3,9 +3,9 @@ Version:   0.1.0
 Release:   1%{?dist}
 Summary:   RSV Consumer for Zabbix
 
-Group:     Applications/Monitoring
+Group:     Applications/System
 License:   Apache 2.0
-URL:       https://twiki.grid.iu.edu/bin/view/MonitoringInformation/RSV
+URL:       https://github.com/treydock/rsv-consumers-zabbix
 
 Source0:   %{name}-%{version}.tar.gz
 
@@ -27,6 +27,8 @@ Requires: python-simplejson
 %prep
 %setup -q
 
+%build
+
 %install
 rm -fr $RPM_BUILD_ROOT
 
@@ -36,8 +38,8 @@ make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%doc AUTHORS LICENSE README.md zabbix_template.xml
 %defattr(-,root,root,-)
+%doc AUTHORS LICENSE README.md zabbix_template.xml
 %{_libexecdir}/rsv/consumers/zabbix-consumer
 %config %{_sysconfdir}/rsv/meta/consumers/zabbix-consumer.meta
 %config(noreplace) %{_sysconfdir}/rsv/consumers/zabbix-consumer.conf
