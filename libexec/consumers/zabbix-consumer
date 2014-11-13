@@ -39,7 +39,7 @@ class ZabbixConsumer(RSVConsumer.RSVConsumer):
           --version
         """
 
-        version = "zabbix-consumer 0.0.1"
+        version = "zabbix-consumer 0.1.0"
         description = "This script processes RSV records and sends them to Zabbix."
 
         parser = OptionParser(usage=usage, description=description, version=version)
@@ -68,9 +68,15 @@ class ZabbixConsumer(RSVConsumer.RSVConsumer):
 
         metric = record["metricName"]
         PLUGIN_STATE = zabbixCode[record["metricStatus"]]
-        # for PLUGIN_HOST, use RSV_HOST from rsv-zabbix.conf instead of the
-        # serviceURI/hostName from the current record (see SOFTWARE-1170)
-        PLUGIN_HOST = self.config.get("RSV", "RSV_HOST")
+        # We need to have either (hostName) or (serviceURI + gatheredAt)
+        # Fallback to RSV_HOST from rsv-zabbix.conf
+        host = None
+        if "serviceURI" in record and "gatheredAt" in record:
+            PLUGIN_HOST = record["serviceURI"]
+        elif "hostName" in record:
+            PLUGIN_HOST = record["hostName"]
+        else:
+            PLUGIN_HOST = self.config.get("RSV", "RSV_HOST")
 
         if self.__options.zabbix_sender:
             self.zabbix_sender(metric, PLUGIN_HOST, PLUGIN_STATE)

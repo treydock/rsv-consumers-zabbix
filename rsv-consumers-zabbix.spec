@@ -1,5 +1,5 @@
 Name:      rsv-consumers-zabbix
-Version:   0.0.1
+Version:   0.1.0
 Release:   1%{?dist}
 Summary:   RSV Consumer for Zabbix
 
@@ -46,5 +46,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(-,rsv,rsv) %{_localstatedir}/log/rsv/consumers
 
 %changelog
+* Tue Nov 11 2014  <treydock@tamu.edu> - 0.1.0-1
+- Update build to version 0.1.0
+
 * Mon Dec 16 2013  <treydock@tamu.edu> - 0.0.1-1
 - Creating a first RPM for rsv-consumers-zabbix

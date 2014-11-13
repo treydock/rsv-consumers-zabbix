@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # User defined variables
-VERSION="0.0.1"
+VERSION="0.1.0"
 RELEASE="1"
 
 # Script constants
 NAME="rsv-consumers-zabbix"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PKG_DIR="pkg/rsv-consumers-zabbix-${VERSION}"
+BUILD_DIR="${DIR}/pkg"
+PKG_DIR="${BUILD_DIR}/rsv-consumers-zabbix-${VERSION}"
 
 # Default variables that have command line flags
 QUIET=1
@@ -91,9 +92,9 @@ exec_cmd() {
 [ $QUIET -eq 1 ] && mock_quiet="--quiet" || mock_quiet=""
 
 # Build necessary directories if they do not exist
-[ -d "SOURCES" ] || mkdir SOURCES
-[ -d "SRPMS" ] || mkdir SRPMS
-[ -d "RPMS" ] || mkdir RPMS
+[ -d "${BUILD_DIR}/SOURCES" ] || mkdir ${BUILD_DIR}/SOURCES
+[ -d "${BUILD_DIR}/SRPMS" ] || mkdir ${BUILD_DIR}/SRPMS
+[ -d "${BUILD_DIR}/RPMS" ] || mkdir ${BUILD_DIR}/RPMS
 
 # Clean and create PKG directory for copying files for tar
 [ -d "${PKG_DIR}" ] && rm -rf ${PKG_DIR}
@@ -102,24 +103,29 @@ mkdir -p ${PKG_DIR}
 # Copy all packaged files to temporary directory for tar
 cp -r etc libexec logrotate Makefile README.md AUTHORS LICENSE zabbix_template.xml ${PKG_DIR}
 
-cd $(dirname ${PKG_DIR})
+cd ${BUILD_DIR}
 
 # Create tarball for rpmbuild
-tar czf ../SOURCES/rsv-consumers-zabbix-${VERSION}.tar.gz rsv-consumers-zabbix-${VERSION}
+tar czf ${BUILD_DIR}/SOURCES/rsv-consumers-zabbix-${VERSION}.tar.gz rsv-consumers-zabbix-${VERSION}
 
 cd $DIR
 
 # build SRPMs
-rpmbuild -bs --define 'dist .el5' --define 'rhel 5' --define '_source_filedigest_algorithm md5' --define '_binary_filedigest_algorithm md5' ${DIR}/rsv-consumers-zabbix.spec
-rpmbuild -bs --define 'dist .el6' --define 'rhel 6' --define '_source_filedigest_algorithm sha256' --define '_binary_filedigest_algorithm sha256' ${DIR}/rsv-consumers-zabbix.spec
+RPMBUILD_OPTS=""
+rpmbuild -bs --define "_topdir ${BUILD_DIR}" --define 'dist .el5' --define 'rhel 5' --define '_source_filedigest_algorithm md5' --define '_binary_filedigest_algorithm md5' ${DIR}/rsv-consumers-zabbix.spec
+rpmbuild -bs --define "_topdir ${BUILD_DIR}" --define 'dist .el6' --define 'rhel 6' --define '_source_filedigest_algorithm sha256' --define '_binary_filedigest_algorithm sha256' ${DIR}/rsv-consumers-zabbix.spec
+rpmbuild -bs --define "_topdir ${BUILD_DIR}" --define 'dist .el7' --define 'rhel 7' --define '_source_filedigest_algorithm sha256' --define '_binary_filedigest_algorithm sha256' ${DIR}/rsv-consumers-zabbix.spec
 
 # if --mock was passed, run mock rebuild
 if [ $MOCK -eq 1 ]; then
   # Build EL5
-  exec_cmd "mock -r epel-5-x86_64 ${mock_quiet} ${mock_trace} --define 'dist .el5' --resultdir=${DIR}/RPMS --rebuild ${DIR}/SRPMS/${NAME}-${VERSION}-${RELEASE}.el5.src.rpm"
+  exec_cmd "mock -r epel-5-x86_64 ${mock_quiet} ${mock_trace} --define 'dist .el5' --resultdir=${BUILD_DIR}/RPMS --rebuild ${BUILD_DIR}/SRPMS/${NAME}-${VERSION}-${RELEASE}.el5.src.rpm"
 
   # Build EL6
-  exec_cmd "mock -r epel-6-x86_64 ${mock_quiet} ${mock_trace} --define 'dist .el6' --resultdir=${DIR}/RPMS --rebuild ${DIR}/SRPMS/${NAME}-${VERSION}-${RELEASE}.el6.src.rpm"
+  exec_cmd "mock -r epel-6-x86_64 ${mock_quiet} ${mock_trace} --define 'dist .el6' --resultdir=${BUILD_DIR}/RPMS --rebuild ${BUILD_DIR}/SRPMS/${NAME}-${VERSION}-${RELEASE}.el6.src.rpm"
+
+  # Build EL7
+  exec_cmd "mock -r epel-7-x86_64 ${mock_quiet} ${mock_trace} --define 'dist .el7' --resultdir=${BUILD_DIR}/RPMS --rebuild ${BUILD_DIR}/SRPMS/${NAME}-${VERSION}-${RELEASE}.el7.src.rpm"
 fi
 
 exit 0

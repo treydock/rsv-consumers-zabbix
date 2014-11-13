@@ -1,6 +1,6 @@
-# OSG-RSV zabbix-consumer
+# rsv-consumers-zabbix
 
-THe RSV zabbix-consumer sends RSV metric results to Zabbix.
+The RSV zabbix-consumer sends RSV metric results to Zabbix.
 
 ## Install
 
@@ -22,6 +22,7 @@ To build RPMs using mock:
 2. Edit /etc/rsv/rsv-zabbix.conf to suite your needs.
 
   * *RSV_HOST* - Sets the name of the host in Zabbix that has the trapper items assigned.
+      * As of v0.1.0 the *RSV_HOST* value is only used if a metric's host can't be determined.
   * *ZABBIX_SERVER* - The hostname or IP address of the Zabbix server.
   * *ZABBIX_TRAPPER_PORT* - The Zabbix Trapper port.  Defaults to 10051.
   * *ZABBIX_ITEM_KEY* - The item key used for the RSV metrics in Zabbix.
@@ -53,6 +54,7 @@ This consumer has been tested with the following versions of OSG and Zabbix.
 * OSG 3 
 * Zabbix 1.8.x
 * Zabbix 2.0.x
+* Zabbix 2.2.x
 
 ## License
 
